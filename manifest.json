@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Brave Dev Tool",
+  "version": "1.0.0",
+  "description": "A powerful development tool for web developers. View page info, inspect elements, monitor network resources, and more. Click URL or title to copy to clipboard.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
